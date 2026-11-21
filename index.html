@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Warrion Perfumes &amp; Gifts</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--bg2:#121212;--card:#171717;--gold:#d4af37;--gold2:#f1d88a;--tx:#f3efe6;--mut:#a39b88;--line:#2b2516;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:90px;scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--tx);font:400 15px/1.7 Montserrat,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.02em}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.gold{background:linear-gradient(135deg,#b8902a,#f1d88a 50%,#b8902a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(10,10,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:14px;height:72px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo b{display:block;font:700 22px/1 'Cormorant Garamond',serif;letter-spacing:.22em}
+.logo small{display:block;font-size:9px;letter-spacing:.38em;color:var(--gold)}
+nav{display:flex;gap:22px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+nav a{padding:6px 0;border-bottom:1px solid transparent;transition:.3s;color:var(--mut)}
+nav a:hover,nav a.on{color:var(--gold);border-color:var(--gold)}
+.tools{display:flex;align-items:center;gap:10px}
+.sbox{display:flex;align-items:center;border:1px solid var(--line);border-radius:30px;padding:0 12px;background:var(--bg2)}
+.sbox input{background:none;border:0;outline:0;width:130px;height:36px;font-size:13px}
+.ibtn{position:relative;background:none;border:1px solid var(--line);border-radius:50%;width:40px;height:40px;cursor:pointer;display:grid;place-items:center;color:var(--gold);transition:.3s}
+.ibtn:hover{border-color:var(--gold)}
+.badge{position:absolute;top:-5px;right:-5px;background:var(--gold);color:#000;font-size:10px;font-weight:700;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center}
+#burger{display:none}
+.btn{display:inline-block;background:linear-gradient(135deg,#b8902a,#f1d88a,#b8902a);color:#111;border:0;padding:13px 28px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:.3s;border-radius:2px}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,175,55,.3)}
+.btn.o{background:none;color:var(--gold);border:1px solid var(--gold)}
+.btn.wa{background:#1fa855;color:#fff}
+.btn.sm{padding:9px 16px;font-size:11px}
+main{min-height:70vh;animation:fade .6s}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-14px)}}
+.hero{position:relative;padding:80px 0;background:radial-gradient(ellipse at 75% 40%,rgba(212,175,55,.2),transparent 60%),var(--bg)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px}
+.eyebrow{color:var(--gold);letter-spacing:.35em;font-size:11px;text-transform:uppercase}
+.hero h1{font-size:clamp(40px,6vw,76px);line-height:1.05;margin:14px 0 18px}
+.hero p{color:var(--mut);max-width:480px;margin-bottom:28px}
+.hero .art{animation:float 6s ease-in-out infinite;filter:drop-shadow(0 20px 50px rgba(212,175,55,.35))}
+section{padding:64px 0}
+.title{text-align:center;margin-bottom:38px}
+.title h2{font-size:clamp(30px,4vw,44px)}
+.title:after{content:"";display:block;width:70px;height:1px;background:var(--gold);margin:14px auto 0}
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cat{border:1px solid var(--line);padding:34px 20px;text-align:center;background:linear-gradient(160deg,var(--card),#0e0e0e);transition:.4s}
+.cat:hover{border-color:var(--gold);transform:translateY(-6px)}
+.cat h3{font-size:26px;margin:8px 0 2px}
+.cat span{color:var(--gold);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--line);transition:.4s;display:flex;flex-direction:column}
+.card:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 14px 40px rgba(0,0,0,.6)}
+.pimg{aspect-ratio:1;background:radial-gradient(circle at 50% 40%,#2a2312,#0d0d0d 70%);display:grid;place-items:center;cursor:pointer;overflow:hidden}
+.pimg svg{width:62%;transition:.5s}.card:hover .pimg svg{transform:scale(1.07) rotate(-2deg)}
+.pinfo{padding:16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.pinfo h3{font-size:22px}.pinfo small{color:var(--mut);font-size:12px}
+.stars{color:var(--gold);font-size:13px;letter-spacing:2px}
+.price{color:var(--gold2);font-weight:500;margin:4px 0 10px}
+.acts{display:flex;gap:8px;margin-top:auto}.acts .btn{flex:1;padding:10px 6px}
+.tag{font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.ctrl{display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap}
+.ctrl input,.ctrl select,.f input,.f select,.f textarea{background:var(--bg2);border:1px solid var(--line);padding:11px 14px;outline:0;border-radius:2px;flex:1;min-width:160px;width:100%}
+.ctrl input:focus,.f input:focus,.f textarea:focus,.f select:focus{border-color:var(--gold)}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
+.why div{padding:24px 14px;border:1px solid var(--line)}.why b{display:block;color:var(--gold);font:600 22px 'Cormorant Garamond',serif}
+.why small{color:var(--mut)}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{border:1px solid var(--line);padding:22px;background:var(--card)}.rev p{color:var(--mut);margin:8px 0;font-style:italic}.rev b{font-size:13px}
+.page{padding:50px 0 70px}.page>.wrap>h1{font-size:46px;text-align:center;margin-bottom:6px}
+.sub{text-align:center;color:var(--mut);margin-bottom:34px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+.f{display:grid;gap:12px}.f label{font-size:12px;letter-spacing:.1em;color:var(--mut)}
+.row{display:grid;grid-template-columns:90px 1fr auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.row .pimg{aspect-ratio:1;cursor:default}.row .pimg svg{width:70%}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line)}
+.qty button{background:none;border:0;width:34px;height:34px;cursor:pointer;color:var(--gold);font-size:18px}
+.qty span{min-width:34px;text-align:center}
+.sum{border:1px solid var(--line);padding:24px;background:var(--card)}
+.sum div{display:flex;justify-content:space-between;padding:6px 0}.sum .t{border-top:1px solid var(--line);margin-top:8px;padding-top:12px;font-size:18px;color:var(--gold2)}
+.x{background:none;border:0;color:var(--mut);cursor:pointer;font-size:12px;text-decoration:underline}
+#ov{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:50;display:none;align-items:center;justify-content:center;padding:16px}
+#ov.on{display:flex}
+.modal{background:var(--bg2);border:1px solid var(--gold);max-width:900px;width:100%;max-height:92vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr;position:relative;animation:fade .4s}
+.modal .body{padding:28px}.modal h2{font-size:34px}
+.close{position:absolute;right:12px;top:8px;background:none;border:0;font-size:30px;color:var(--gold);cursor:pointer;z-index:2}
+.mrev{border-top:1px solid var(--line);padding:10px 0;font-size:13px;color:var(--mut)}
+#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,90px);background:var(--gold);color:#000;padding:12px 24px;font-size:13px;z-index:60;transition:.4s;border-radius:2px}
+#toast.on{transform:translate(-50%,0)}
+footer{border-top:1px solid var(--line);background:#070707;padding:50px 0 30px;color:var(--mut);font-size:13px}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}.fg h4{color:var(--gold);letter-spacing:.2em;font-size:12px;margin-bottom:10px;text-transform:uppercase}
+.fg a{display:block;padding:2px 0}.fg a:hover{color:var(--gold)}
+.copy{text-align:center;margin-top:30px;font-size:12px}
+.wafab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));background:#1fa855;color:#fff;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;z-index:15;box-shadow:0 6px 20px rgba(0,0,0,.5);font-weight:700}
+@media(max-width:900px){
+ #burger{display:grid}
+ nav{position:fixed;top:72px;left:0;right:0;background:var(--bg);flex-direction:column;padding:10px 24px 24px;border-bottom:1px solid var(--gold);display:none;gap:4px}
+ nav.on{display:flex}nav a{padding:12px 0;border-bottom:1px solid var(--line)}
+ .hero .wrap,.two,.modal,.fg{grid-template-columns:1fr}.hero .art{max-width:260px;margin:0 auto;order:-1}
+ .cats,.why,.revs{grid-template-columns:1fr 1fr}.sbox{display:none}.sbox.show{display:flex;position:fixed;top:78px;left:16px;right:16px;z-index:30}.sbox.show input{width:100%}
+}
+@media(max-width:560px){.cats,.why,.revs{grid-template-columns:1fr}.row{grid-template-columns:70px 1fr}.row>:last-child{grid-column:1/-1}.grid{grid-template-columns:1fr 1fr;gap:12px}.acts{flex-direction:column}.logo small{display:none}}
+</style></head><body>
+<header><div class="wrap bar">
+ <a href="#home" class="logo" aria-label="Warrion home">
+  <svg width="42" height="42" viewBox="0 0 48 48"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b8902a"/><stop offset=".5" stop-color="#f1d88a"/><stop offset="1" stop-color="#b8902a"/></linearGradient></defs><path d="M24 2 44 14v20L24 46 4 34V14z" fill="#0a0a0a" stroke="url(#lg)" stroke-width="2"/><path d="M12 17l5 15 7-11 7 11 5-15" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-linejoin="round"/><circle cx="24" cy="10" r="1.8" fill="url(#lg)"/></svg>
+  <span><b class="gold">WARRION</b><small>PERFUMES &amp; GIFTS</small></span></a>
+ <nav id="nav"></nav>
+ <div class="tools">
+  <div class="sbox" id="sbox"><input id="gs" placeholder="Search fragrances…" aria-label="Search"></div>
+  <button class="ibtn" id="sbtn" aria-label="Search" style="display:none">⌕</button>
+  <a href="#cart" class="ibtn" aria-label="Cart">🛍<span class="badge" id="cc">0</span></a>
+  <button class="ibtn" id="burger" aria-label="Menu">☰</button>
+ </div></div></header>
+<main id="app"></main>
+<footer><div class="wrap"><div class="fg">
+ <div><div class="logo"><b class="gold serif" style="font-size:24px;letter-spacing:.22em">WARRION</b></div><p style="margin-top:10px">Luxury fragrances and bespoke gift boxes, crafted for those who leave a lasting impression. Delivered across Pakistan.</p></div>
+ <div><h4>Explore</h4><a href="#shop">Shop All</a><a href="#men">Men’s Perfumes</a><a href="#women">Women’s Perfumes</a><a href="#gifts">Gift Boxes</a></div>
+ <div><h4>Company</h4><a href="#about">About Us</a><a href="#contact">Contact Us</a><a href="#cart">Cart</a><a id="fwa" target="_blank" rel="noopener">WhatsApp</a></div></div>
+ <p class="copy">© 2026 Warrion Perfumes &amp; Gifts. All rights reserved.</p></div></footer>
+<a class="wafab" id="fab" target="_blank" rel="noopener" aria-label="Order on WhatsApp">WA</a>
+<div id="ov"><div class="modal" id="modal"></div></div><div id="toast"></div>
+<script>
+const WA='923001234567'; // replace with your WhatsApp number (country code, no +)
+const $=s=>document.querySelector(s),PKR=n=>'PKR '+Number(n).toLocaleString('en-PK');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ls={get(k,d){try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const P=[
+{id:1,n:'Warrion Noir',c:'men',p:8500,h:42,note:'Oud · Black Pepper · Amber',s:'100 ml',d:'A commanding oriental scent. Smoky oud and black pepper melt into warm amber for an unforgettable evening presence.'},
+{id:2,n:'Royal Oud',c:'men',p:12500,h:38,note:'Agarwood · Saffron · Musk',s:'100 ml',d:'Rich Arabian agarwood layered with saffron and soft musk. Deep, regal and long lasting.'},
+{id:3,n:'Gold Sultan',c:'men',p:9800,h:46,note:'Bergamot · Cedar · Leather',s:'100 ml',d:'Fresh bergamot opens to a refined heart of cedar and supple leather. Made for the boardroom and beyond.'},
+{id:4,n:'Midnight Legend',c:'men',p:7200,h:30,note:'Lavender · Vetiver · Tonka',s:'75 ml',d:'A modern aromatic fougère with creamy tonka. Easy to wear, hard to forget.'},
+{id:5,n:'Rose Empress',c:'women',p:9500,h:350,note:'Damask Rose · Peony · Vanilla',s:'75 ml',d:'Velvety Damask rose wrapped in vanilla. Romantic, elegant and endlessly feminine.'},
+{id:6,n:'Jasmine Royale',c:'women',p:8900,h:330,note:'Jasmine · Pear · White Musk',s:'75 ml',d:'Luminous jasmine and juicy pear over clean white musk. A bouquet in a bottle.'},
+{id:7,n:'Amber Goddess',c:'women',p:11200,h:20,note:'Amber · Orchid · Sandalwood',s:'100 ml',d:'Sensual amber and orchid on a creamy sandalwood base. Glamorous and magnetic.'},
+{id:8,n:'Velvet Bloom',c:'women',p:6800,h:310,note:'Iris · Peach · Praline',s:'50 ml',d:'Soft powdery iris with a gourmand peach and praline drift. Playful luxury for daily wear.'},
+{id:9,n:'The Royal Gift Box',c:'gifts',p:18500,h:40,note:'2 perfumes + velvet box',s:'2 × 50 ml',d:'One men’s and one women’s signature fragrance in a hand-finished black velvet box with gold ribbon.'},
+{id:10,n:'Gold Classic Box',c:'gifts',p:9900,h:44,note:'Perfume + attar + card',s:'1 × 100 ml',d:'A signature perfume with a pure attar roll-on and personalised greeting card. Perfect for birthdays.'},
+{id:11,n:'Bridal Luxury Set',c:'gifts',p:24500,h:350,note:'3 perfumes + candle',s:'3 × 30 ml',d:'Our most extravagant presentation: three fragrances and a scented candle for weddings and anniversaries.'},
+{id:12,n:'Mini Discovery Set',c:'gifts',p:5500,h:35,note:'6 mini fragrances',s:'6 × 10 ml',d:'Explore the Warrion collection with six travel-size bestsellers in a keepsake gold-edged case.'}];
+const R=[['Ayesha K.','Lahore',5,'Absolutely stunning. The Rose Empress lasts all day and I get compliments everywhere.'],['Hamza R.','Karachi',5,'Royal Oud smells like a real luxury house. Packaging was superb and delivery was quick.'],['Sana M.','Islamabad',4,'Ordered the Gold Classic Box for my sister. She loved it. Beautiful presentation.'],['Bilal A.','Faisalabad',5,'Warrion Noir is my new signature scent. Great value for this quality.'],['Mariam S.','Multan',5,'The Bridal Luxury Set made a perfect wedding gift. Highly recommended.']];
+const T={home:'Home',shop:'Shop All',men:'Men’s Perfumes',women:'Women’s Perfumes',gifts:'Gift Boxes',about:'About Us',contact:'Contact Us'};
+let cart=ls.get('wr_cart',{}),mine=ls.get('wr_rev',{}),q='',sort='',last=null;
+const by=id=>P.find(p=>p.id==id);
+const stars=n=>'★'.repeat(n)+'☆'.repeat(5-n);
+function art(p,k=''){const a=`hsl(${p.h},55%,52%)`,b=`hsl(${p.h},60%,22%)`,g=`g${p.id}${k}`;
+ const defs=`<defs><linearGradient id="${g}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient><linearGradient id="${g}k" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b8902a"/><stop offset=".5" stop-color="#f6e3a1"/><stop offset="1" stop-color="#b8902a"/></linearGradient></defs>`;
+ if(p.c==='gifts')return `<svg viewBox="0 0 200 200">${defs}<rect x="30" y="78" width="140" height="94" rx="4" fill="#0c0c0c" stroke="url(#${g}k)" stroke-width="2"/><rect x="24" y="60" width="152" height="26" rx="3" fill="#161616" stroke="url(#${g}k)" stroke-width="2"/><rect x="94" y="60" width="12" height="112" fill="url(#${g}k)"/><path d="M100 60c-26-34-44-8-20 0zM100 60c26-34 44-8 20 0z" fill="none" stroke="url(#${g}k)" stroke-width="3"/><text x="100" y="130" text-anchor="middle" font-family="Georgia,serif" font-size="13" letter-spacing="3" fill="#d4af37" transform="translate(-33 0)">W</text></svg>`;
+ return `<svg viewBox="0 0 200 200">${defs}<rect x="82" y="14" width="36" height="26" rx="3" fill="url(#${g}k)"/><rect x="92" y="38" width="16" height="12" fill="#2a2a2a"/><rect x="48" y="50" width="104" height="134" rx="14" fill="url(#${g})" stroke="url(#${g}k)" stroke-width="2"/><rect x="60" y="60" width="14" height="110" rx="7" fill="#fff" opacity=".14"/><rect x="68" y="96" width="64" height="52" fill="#0a0a0a" opacity=".78" stroke="url(#${g}k)" stroke-width="1"/><text x="100" y="118" text-anchor="middle" font-family="Georgia,serif" font-size="11" letter-spacing="3" fill="#f1d88a">WARRION</text><text x="100" y="136" text-anchor="middle" font-family="Georgia,serif" font-size="7" letter-spacing="2" fill="#d4af37">${esc(p.n.toUpperCase().slice(0,16))}</text></svg>`}
+function rate(p){const r=[...mine[p.id]||[],...R.filter((_,i)=>(i+p.id)%3!==0).map(x=>({n:x[0],r:x[2],t:x[3]}))];return r}
+function avg(p){const r=rate(p);return Math.round(r.reduce((a,b)=>a+b.r,0)/r.length)}
+function card(p){return `<div class="card"><div class="pimg" onclick="openP(${p.id})">${art(p,'c')}</div><div class="pinfo"><span class="tag">${p.c==='gifts'?'Gift Box':p.c==='men'?'For Him':'For Her'}</span><h3>${p.n}</h3><small>${p.note}</small><div class="stars">${stars(avg(p))}</div><div class="price">${PKR(p.p)}</div><div class="acts"><button class="btn o sm" onclick="openP(${p.id})">Details</button><button class="btn sm" onclick="add(${p.id},1)">Add</button></div></div></div>`}
+function count(){return Object.values(cart).reduce((a,b)=>a+b,0)}
+function save(){ls.set('wr_cart',cart);$('#cc').textContent=count()}
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('on'),2200)}
+function add(id,n){cart[id]=(cart[id]||0)+n;save();toast('Added to cart ✓');if(location.hash==='#cart')route()}
+function setQ(id,n){if(n<1){delete cart[id]}else cart[id]=n;save();route()}
+const ship=s=>s===0||s>=15000?0:300;
+const total=()=>Object.entries(cart).reduce((a,[i,n])=>a+by(i).p*n,0);
+function waLink(txt){return `https://wa.me/${WA}?text=${encodeURIComponent(txt)}`}
+function cartText(){let t='Hello Warrion Perfumes & Gifts, I would like to order:\n';Object.entries(cart).forEach(([i,n])=>t+=`• ${by(i).n} × ${n} = ${PKR(by(i).p*n)}\n`);const s=total();return t+`Subtotal: ${PKR(s)}\nDelivery: ${ship(s)?PKR(ship(s)):'Free'}\nTotal: ${PKR(s+ship(s))}`}
+function grid(cat){let l=P.filter(p=>(cat==='shop'||p.c===cat)&&(p.n+p.note+p.c).toLowerCase().includes(q.toLowerCase()));
+ if(sort==='lo')l.sort((a,b)=>a.p-b.p);if(sort==='hi')l.sort((a,b)=>b.p-a.p);
+ return l.length?l.map(card).join(''):'<p style="grid-column:1/-1;text-align:center;color:var(--mut)">No fragrances match your search.</p>'}
+function listing(cat){const sub={shop:'Our complete collection of signature fragrances and gifts.',men:'Bold, woody and oriental scents for him.',women:'Floral, amber and gourmand scents for her.',gifts:'Luxury gift boxes, beautifully presented.'}[cat];
+ return `<div class="page"><div class="wrap"><h1 class="gold">${T[cat]}</h1><p class="sub">${sub}</p><div class="ctrl"><input id="ls" value="${esc(q)}" placeholder="Search by name or notes…"><select id="so"><option value="">Sort: Featured</option><option value="lo"${sort==='lo'?' selected':''}>Price: Low to High</option><option value="hi"${sort==='hi'?' selected':''}>Price: High to Low</option></select></div><div class="grid" id="grid">${grid(cat)}</div></div></div>`}
+function home(){const rv=R.slice(0,3).map(x=>`<div class="rev"><div class="stars">${stars(x[2])}</div><p>“${x[3]}”</p><b>${x[0]}</b> <small style="color:var(--mut)">· ${x[1]}</small></div>`).join('');
+ return `<div class="hero"><div class="wrap"><div><div class="eyebrow">The Art of Fragrance</div><h1>Scents that <span class="gold">define royalty</span></h1><p>Discover Warrion’s collection of luxury perfumes and handcrafted gift boxes. Pure oils, timeless compositions and presentation worthy of every occasion.</p><a class="btn" href="#shop">Shop the Collection</a> <a class="btn o" href="#gifts" style="margin-left:8px">Gift Boxes</a></div><div class="art">${art(by(2),'h')}</div></div></div>
+ <section><div class="wrap"><div class="title"><h2>Shop by Category</h2></div><div class="cats"><a class="cat" href="#men"><span>For Him</span><h3>Men’s Perfumes</h3></a><a class="cat" href="#women"><span>For Her</span><h3>Women’s Perfumes</h3></a><a class="cat" href="#gifts"><span>Presents</span><h3>Gift Boxes</h3></a></div></div></section>
+ <section style="background:var(--bg2)"><div class="wrap"><div class="title"><h2>Bestsellers</h2></div><div class="grid">${[1,5,9,2].map(i=>card(by(i))).join('')}</div></div></section>
+ <section><div class="wrap why"><div><b>Authentic</b><small>Premium oils, long lasting</small></div><div><b>Free Delivery</b><small>On orders over PKR 15,000</small></div><div><b>Gift Ready</b><small>Luxury packaging included</small></div><div><b>Easy Ordering</b><small>Checkout or WhatsApp</small></div></div></section>
+ <section style="background:var(--bg2)"><div class="wrap"><div class="title"><h2>Loved by Our Customers</h2></div><div class="revs">${rv}</div></div></section>`}
+function about(){return `<div class="page"><div class="wrap"><h1 class="gold">About Warrion</h1><p class="sub">Crafted with passion. Worn with pride.</p><div class="two"><div class="pimg" style="aspect-ratio:1;cursor:default">${art(by(7),'a')}</div><div><h2 style="font-size:34px;margin-bottom:12px">Our Story</h2><p style="color:var(--mut);margin-bottom:12px">Warrion Perfumes &amp; Gifts was born from a love of rare ingredients and the belief that a fragrance should tell a story. Inspired by Arabian oud traditions and modern European perfumery, every Warrion scent is blended to be bold, elegant and lasting.</p><p style="color:var(--mut);margin-bottom:12px">Our gift boxes are assembled by hand, because the right present should feel as special as the person receiving it.</p><p style="color:var(--mut)">From Lahore to every corner of Pakistan, we deliver luxury to your door.</p></div></div></div></div>`}
+function contact(){return `<div class="page"><div class="wrap"><h1 class="gold">Contact Us</h1><p class="sub">We would love to hear from you.</p><div class="two"><div><h3 style="font-size:28px;margin-bottom:10px">Get in Touch</h3><p style="color:var(--mut)">📍 Lahore, Pakistan<br>📞 +92 300 1234567<br>✉ hello@warrion.pk<br>🕒 Mon – Sat, 11am – 9pm</p><br><a class="btn wa" target="_blank" rel="noopener" href="${waLink('Hello Warrion, I have a question.')}">Chat on WhatsApp</a></div><form class="f" onsubmit="return sendC(event)"><input id="cn" placeholder="Your name" required><input id="cp" placeholder="Phone or email" required><textarea id="cm" rows="5" placeholder="Your message" required></textarea><button class="btn">Send via WhatsApp</button></form></div></div></div>`}
+function cartPg(){const ids=Object.keys(cart);if(!ids.length)return `<div class="page"><div class="wrap" style="text-align:center"><h1 class="gold">Shopping Cart</h1><p class="sub">Your cart is empty.</p><a class="btn" href="#shop">Start Shopping</a></div></div>`;
+ const s=total(),sh=ship(s);
+ return `<div class="page"><div class="wrap"><h1 class="gold">Shopping Cart</h1><p class="sub">${count()} item(s)</p><div class="two" style="grid-template-columns:1.6fr 1fr"><div>${ids.map(i=>{const p=by(i),n=cart[i];return `<div class="row"><div class="pimg">${art(p,'r')}</div><div><h3 style="font-size:22px">${p.n}</h3><small style="color:var(--mut)">${p.s} · ${PKR(p.p)}</small><br><button class="x" onclick="setQ(${i},0)">Remove</button></div><div style="text-align:right"><div class="qty"><button onclick="setQ(${i},${n-1})">−</button><span>${n}</span><button onclick="setQ(${i},${n+1})">+</button></div><div class="price" style="margin:6px 0 0">${PKR(p.p*n)}</div></div></div>`}).join('')}</div>
+ <div class="sum"><div><span>Subtotal</span><span>${PKR(s)}</span></div><div><span>Delivery</span><span>${sh?PKR(sh):'Free'}</span></div><div class="t"><b>Total</b><b>${PKR(s+sh)}</b></div><br><a class="btn" href="#checkout" style="display:block;text-align:center">Checkout</a><br><a class="btn wa" style="display:block;text-align:center" target="_blank" rel="noopener" href="${waLink(cartText())}">Order on WhatsApp</a></div></div></div></div>`}
+function checkout(){if(!count())return cartPg();const s=total(),sh=ship(s);
+ return `<div class="page"><div class="wrap"><h1 class="gold">Checkout</h1><p class="sub">Secure your order in a minute.</p><div class="two" style="grid-template-columns:1.4fr 1fr"><form class="f" onsubmit="return place(event)"><input id="kn" placeholder="Full name" required><input id="kp" type="tel" placeholder="Phone (03XX XXXXXXX)" required><input id="ke" type="email" placeholder="Email (optional)"><input id="kc" placeholder="City" required><textarea id="ka" rows="3" placeholder="Full delivery address" required></textarea><label>Payment method</label><select id="kpm"><option>Cash on Delivery</option><option>Bank Transfer</option><option>JazzCash</option><option>Easypaisa</option></select><button class="btn">Place Order · ${PKR(s+sh)}</button></form>
+ <div class="sum"><h3 style="font-size:24px;margin-bottom:8px">Order Summary</h3>${Object.keys(cart).map(i=>`<div><span>${by(i).n} × ${cart[i]}</span><span>${PKR(by(i).p*cart[i])}</span></div>`).join('')}<div><span>Delivery</span><span>${sh?PKR(sh):'Free'}</span></div><div class="t"><b>Total</b><b>${PKR(s+sh)}</b></div></div></div></div></div>`}
+function thanks(){return `<div class="page"><div class="wrap" style="text-align:center;max-width:620px"><div style="font-size:54px;color:var(--gold)">✓</div><h1 class="gold">Thank You, ${esc(last.name)}!</h1><p class="sub">Your order <b style="color:var(--gold)">${last.no}</b> has been received. Total: ${PKR(last.tot)} (${esc(last.pay)}). We will contact you shortly to confirm delivery.</p><a class="btn wa" target="_blank" rel="noopener" href="${last.wa}">Confirm on WhatsApp</a> <a class="btn o" href="#home" style="margin-left:8px">Continue Shopping</a></div></div>`}
+function place(e){e.preventDefault();const s=total(),sh=ship(s),f=id=>$('#'+id).value.trim();
+ const no='WR-'+Math.floor(10000+Math.random()*89999);
+ const msg=`Order ${no}\n${cartText()}\n\nName: ${f('kn')}\nPhone: ${f('kp')}\nCity: ${f('kc')}\nAddress: ${f('ka')}\nPayment: ${$('#kpm').value}`;
+ last={no,name:f('kn'),tot:s+sh,pay:$('#kpm').value,wa:waLink(msg)};cart={};save();location.hash='#thanks';return false}
+function sendC(e){e.preventDefault();window.open(waLink(`Hello Warrion, I'm ${$('#cn').value} (${$('#cp').value}).\n${$('#cm').value}`),'_blank');toast('Opening WhatsApp…');return false}
+function openP(id,k){const p=by(id),rv=rate(p);
+ $('#modal').innerHTML=`<button class="close" onclick="closeP()" aria-label="Close">×</button><div class="pimg" style="cursor:default;aspect-ratio:auto;min-height:300px">${art(p,'m')}</div><div class="body"><span class="tag">${p.c==='gifts'?'Gift Box':p.c==='men'?'For Him':'For Her'}</span><h2>${p.n}</h2><div class="stars">${stars(avg(p))} <small style="color:var(--mut)">(${rv.length} reviews)</small></div><div class="price" style="font-size:22px">${PKR(p.p)}</div><p style="color:var(--mut)">${p.d}</p><p style="margin:10px 0"><b>Notes:</b> ${p.note}<br><b>Size:</b> ${p.s}</p>
+ <div style="display:flex;gap:12px;align-items:center;margin:14px 0"><div class="qty"><button onclick="mq(-1)">−</button><span id="mqv">1</span><button onclick="mq(1)">+</button></div><button class="btn" onclick="add(${p.id},+$('#mqv').textContent);closeP()">Add to Cart</button></div>
+ <a class="btn wa sm" target="_blank" rel="noopener" onclick="this.href=waLink('Hello Warrion, I want to order: ${p.n} × '+$('#mqv').textContent+' ('+PKR(${p.p}*$('#mqv').textContent)+')')" href="#">Order on WhatsApp</a>
+ <h3 style="font-size:24px;margin:20px 0 4px">Customer Reviews</h3>${rv.slice(0,4).map(r=>`<div class="mrev"><span class="stars">${stars(r.r)}</span> <b>${esc(r.n)}</b><br>${esc(r.t)}</div>`).join('')}
+ <form class="f" style="margin-top:12px" onsubmit="return rev(event,${p.id})"><input id="rn" placeholder="Your name" required><select id="rr"><option value="5">★★★★★</option><option value="4">★★★★☆</option><option value="3">★★★☆☆</option></select><textarea id="rt" rows="2" placeholder="Write a review" required></textarea><button class="btn o sm">Submit Review</button></form></div>`;
+ $('#ov').classList.add('on')}
+function mq(d){const e=$('#mqv');e.textContent=Math.max(1,+e.textContent+d)}
+function closeP(){$('#ov').classList.remove('on')}
+function rev(e,id){e.preventDefault();(mine[id]=mine[id]||[]).unshift({n:$('#rn').value,r:+$('#rr').value,t:$('#rt').value});ls.set('wr_rev',mine);toast('Thank you for your review!');openP(id);route();return false}
+function route(){let h=(location.hash||'#home').slice(1);if(h==='thanks'&&!last)h='home';if(!T[h]&&!['cart','checkout','thanks'].includes(h))h='home';
+ const m=$('#app');m.style.animation='none';m.offsetWidth;m.style.animation='';
+ m.innerHTML=({home,about,contact,cart:cartPg,checkout,thanks}[h]||(()=>listing(h)))();
+ document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+h));
+ $('#nav').classList.remove('on');
+ const ls2=$('#ls');if(ls2){ls2.oninput=e=>{q=e.target.value;$('#grid').innerHTML=grid(h)};$('#so').onchange=e=>{sort=e.target.value;$('#grid').innerHTML=grid(h)}}}
+let lastH=null;window.addEventListener('hashchange',()=>{route();if(lastH!==location.hash)window.scrollTo(0,0);lastH=location.hash});
+$('#nav').innerHTML=Object.keys(T).map(k=>`<a href="#${k}">${T[k]}</a>`).join('');
+$('#burger').onclick=()=>$('#nav').classList.toggle('on');
+$('#gs').onkeydown=e=>{if(e.key==='Enter'){q=e.target.value;e.target.value='';$('#sbox').classList.remove('show');if(location.hash==='#shop')route();else location.hash='#shop'}};
+const sb=$('#sbtn'),mql=matchMedia('(max-width:900px)');const sbv=()=>sb.style.display=mql.matches?'grid':'none';sbv();mql.onchange=sbv;sb.onclick=()=>{$('#sbox').classList.toggle('show');$('#gs').focus()};
+$('#ov').onclick=e=>{if(e.target.id==='ov')closeP()};document.onkeydown=e=>{if(e.key==='Escape')closeP()};
+$('#fab').href=waLink('Hello Warrion Perfumes & Gifts, I would like to place an order.');$('#fwa').href=$('#fab').href;
+save();route();
+</script></body></html>
